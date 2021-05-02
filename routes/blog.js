@@ -13,6 +13,9 @@ router.post("/", (req, res) => {
   const blog = new Blog({
     title: req.body.title,
     story: req.body.story,
+    name: req.body.name,
+    email: req.body.email,
+    userImage: req.body.userImage,
   });
   blog
     .save()
@@ -32,6 +35,9 @@ router.patch("/:BlogID", (req, res) => {
       $set: {
         title: req.body.title,
         story: req.body.story,
+        name: req.body.name,
+        email: req.body.email,
+        userImage: req.body.userImage,
       },
     }
   )
